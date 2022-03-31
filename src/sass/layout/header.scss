@@ -1,0 +1,100 @@
+.menu-toggle {
+    display: block;
+    background: $color3;
+    height: 2em;
+    color: $color2;
+    
+    i {
+        width: 2em;
+        line-height: 2;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    @include tablet{
+        display: none;
+    }
+}
+
+.navegacion {
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+    }
+
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__logo{
+        display: flex;
+        align-items: center;
+        @include tablet {
+            flex: 3;
+        }
+    }
+
+    &__menu{
+        @include tablet {
+            transition: all .0s;
+            height: auto;
+            flex: 4;
+        }
+        height: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        transition: .4s ease-out;
+    }
+
+    ul {
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+        }
+        text-align: center;
+        line-height: 2;
+        width: 100%;
+    }
+    
+    li{
+        @include tablet{
+            margin-right: 1.5em;
+            list-style: none;
+            border: none;
+        }
+        border-top: 2px solid $color4;
+    }
+
+    a{
+        text-transform: uppercase;
+        color: rgb(110,110,110);
+        @include tablet {
+            padding: .3em 0;
+            text-transform: uppercase;
+            position: relative;
+            &:before {
+                content: "";
+                position: absolute;
+                background: $color2;
+                height: .08em;
+                width: 0;
+                top: 100%;
+                left: 50%;
+                transition: all .4s;
+            }
+            &:hover:before{
+                left: 0;
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+.show {
+    // height: 10.625em;
+    height: 12.75em;
+}
